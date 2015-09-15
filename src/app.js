@@ -6,8 +6,8 @@ app.controller('StarCtrl', function($scope,$http) {
 	$scope.planets =[];
 	$scope.getPlanets = () =>{
 		var i=1;
-		while(i<10){
-			$http.get("https://swapi.co/api/planets/")
+		while(i<8){
+			$http.get("https://swapi.co/api/planets/?page="+i)
 			.success(function(data){
 				data.results.forEach(function(p){
 					$scope.planets.push(p);
